@@ -1,7 +1,11 @@
 div {
 
-  img {
+  img, svg {
     max-width: 200px;
     max-height: 200px;
   }
+}
+
+.svgFill path {
+  fill: red;
 }
