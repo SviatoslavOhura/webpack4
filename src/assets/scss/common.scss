@@ -9,3 +9,10 @@ div {
 .svgFill path {
   fill: red;
 }
+
+.icon-svg {
+  width: 200px;
+  height: 200px;
+  background-image: url('../images/svg.svg');
+  background-color: blue;
+}

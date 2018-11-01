@@ -13,17 +13,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /(\.js|\.jsx)$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-            plugins: [ "inline-react-svg" ]
-          }
-        }
-      },
       { test: /\.scss$/,
         use: [
           "style-loader",
@@ -31,7 +20,17 @@ module.exports = {
           "sass-loader"
         ]
       },
-      { test: /\.(woff(2)?|ttf|eot|png|jpg)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
+      {
+        test: /(\.js|\.jsx)$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          }
+        }
+      },
+      { test: /\.(woff(2)?|ttf|eot|png|jpg|svg)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
     ]
   },
   resolve: {

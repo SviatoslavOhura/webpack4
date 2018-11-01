@@ -8,7 +8,10 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    publicPath: '/',
     contentBase: path.join(dirs.src, "index.js"),
-    port: 9000
+    port: 9000,
+    open: true,
+    overlay: true,
   }
 });
