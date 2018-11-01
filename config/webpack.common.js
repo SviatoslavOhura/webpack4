@@ -19,7 +19,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: [ "inline-react-svg" ]
           }
         }
       },
@@ -30,28 +31,14 @@ module.exports = {
           "sass-loader"
         ]
       },
-      { test: /\.(woff(2)?|ttf|eot|svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "babel-loader"
-          },
-          {
-            loader: "react-svg-loader",
-            options: {
-              jsx: true
-            }
-          }
-        ]
-      }
+      { test: /\.(woff(2)?|ttf|eot|png|jpg)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
     ]
   },
   resolve: {
     alias: {
       components: path.join(dirs.src, '/components'),
-      styles: path.join(dirs.assets, 'scss'),
-      images: path.join(dirs.assets, 'images'),
+      styles: path.join(dirs.assets, '/scss'),
+      images: path.join(dirs.assets, '/images'),
     }
   },
   plugins: [
